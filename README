@@ -1,0 +1,27 @@
+Copyright (C) 2011  Shantanu Goel
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Author: Shantanu Goel (http://tech.shantanugoel.com/)
+
+This is a system to log the internet bandwidth usage of devices remotely. This is most useful for tracking bandwidth usage of home router/gateway type devices that do not have space to track and store the bandwidth usage logs on the device itself. This can be used for any device with any OS.
+The system is divided into:
+remote-bandwidth-stats.sh - Needs to be run from the device which is being logged. Currently tailored for linux hosts and should be modified for other OSs. Should be run at regular intervals (e.g. run every 5 minutes through cron)
+
+remote-bandwidth-stats.php - Needs to be kept in a www accessible path on a server as this is the file that remote host needs to talk to.
+
+stats_parse.pl - Needs to be kept on the server where remote-bandwidth-stats.php is kept but doesn't need to be www accessible. This should be run on the server internally whenever the graphs and html needed for viewing the stats are needed to be updated. e.g. This can be run on the server every hour or so through cron.
+
+You can also see the screenshots of generated html and graphs in the screenshots directory in this repository
